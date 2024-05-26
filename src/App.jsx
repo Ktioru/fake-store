@@ -1,13 +1,11 @@
-import { useState } from "react";
+import { Outlet, Link } from "react-router-dom";
 import "./App.scss";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <div className="body">
       <header>
-        <h2>Course Store</h2>
+        <h2>Programming Courses</h2>
         <nav>
           <div className="page">
             <p className="page-text">Home</p>
@@ -23,6 +21,9 @@ function App() {
           </div>
         </nav>
       </header>
+      <main>
+        <Outlet />
+      </main>
     </div>
   );
 }
