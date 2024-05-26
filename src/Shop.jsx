@@ -1,25 +1,32 @@
 import "./App.scss";
 import Product from "./components/Product";
-import logo from "./assets/javascript-logo.png";
+import javascriptLogo from "./assets/javascript-logo.png";
+import pythonLogo from "./assets/python-logo.png";
+import unityLogo from "./assets/unity-logo.png";
+import linuxLogo from "./assets/arch-linux-logo.png";
 
 const Shop = () => {
   return (
     <div className="shop">
       <Product
-        logo={logo}
+        name={"Javascript"}
+        logo={javascriptLogo}
         title={"Javascript Course for Beginners - Become a Front End Master"}
       />
       <Product
-        logo={logo}
-        title={"Javascript Course for Beginners - Become a Front End Master"}
+        name={"Python"}
+        logo={pythonLogo}
+        title={"Python Course for Beginners - Machine Learning"}
       />
       <Product
-        logo={logo}
-        title={"Javascript Course for Beginners - Become a Front End Master"}
+        name={"Unity"}
+        logo={unityLogo}
+        title={"Unity Course - Make the games of your dreams"}
       />
       <Product
-        logo={logo}
-        title={"Javascript Course for Beginners - Become a Front End Master"}
+        name={"Linux"}
+        logo={linuxLogo}
+        title={"Linux Course - The Ultimate Guide for Command Line"}
       />
     </div>
   );

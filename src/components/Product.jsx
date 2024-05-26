@@ -1,7 +1,17 @@
 import { Link } from "react-router-dom";
 import "../App.scss";
 
-const Product = ({ title, logo }) => {
+const Product = ({ name, title, logo, price = 49.99 }) => {
+  function Cart() {
+    const course = JSON.parse(localStorage.getItem(name));
+    if (course.inCart == false) {
+      course.inCart = true;
+      localStorage.setItem(name, JSON.stringify(course));
+    } else if (course.inCart == true) {
+      course.inCart = false;
+      localStorage.setItem(name, JSON.stringify(course));
+    }
+  }
   return (
     <div className="product">
       <div className="course">
@@ -14,8 +24,8 @@ const Product = ({ title, logo }) => {
         tempor incididunt ut labore et dolore magna aliqua.{" "}
       </p>
       <div className="buy">
-        <p className="price">$49.99</p>
-        <button>Add to Cart</button>
+        <p className="price">${price}</p>
+        <button onClick={Cart}>Add to Cart</button>
       </div>
     </div>
   );
