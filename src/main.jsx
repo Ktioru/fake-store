@@ -5,6 +5,7 @@ import App from "./App.jsx";
 import Home from "./Home.jsx";
 import Shop from "./Shop.jsx";
 import Cart from "./Cart.jsx";
+import AboutUs from "./AboutUs.jsx";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: "Cart",
         element: <Cart />,
+      },
+      {
+        path: "AboutUs",
+        element: <AboutUs />,
       },
     ],
   },

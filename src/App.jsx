@@ -41,7 +41,12 @@ function App() {
   return (
     <div className="body">
       <header>
-        <h2>Programming Courses</h2>
+        <h2>
+          Programming Courses made by{" "}
+          <a href="https://github.com/Ktioru" target="_blank">
+            Ktioru
+          </a>
+        </h2>
         <nav>
           <div className="page">
             <Link to={"/Home"}>
@@ -59,7 +64,7 @@ function App() {
             </Link>
           </div>
           <div className="page">
-            <Link to={"/Home"}>
+            <Link to={"/AboutUs"}>
               <p className="page-text">About Us</p>
             </Link>
           </div>
