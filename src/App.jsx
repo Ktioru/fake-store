@@ -34,10 +34,8 @@ function App() {
     },
   ];
   useEffect(() => {
-    if (Storage.length == 0) {
-      courses.forEach((course) => {
-        localStorage.setItem(course.name, JSON.stringify(course));
-      });
+    if (localStorage.length == 0) {
+      localStorage.setItem("Courses", JSON.stringify(courses));
     }
   }, []);
   return (

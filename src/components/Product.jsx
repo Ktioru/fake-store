@@ -1,17 +1,39 @@
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 import "../App.scss";
 
 const Product = ({ name, title, logo, price = 49.99 }) => {
+  const [action, SetAction] = useState("Add to");
+
   function Cart() {
-    const course = JSON.parse(localStorage.getItem(name));
-    if (course.inCart == false) {
-      course.inCart = true;
-      localStorage.setItem(name, JSON.stringify(course));
-    } else if (course.inCart == true) {
-      course.inCart = false;
-      localStorage.setItem(name, JSON.stringify(course));
-    }
+    const courses = JSON.parse(localStorage.getItem("Courses"));
+
+    courses.forEach((course) => {
+      if (course.name == name) {
+        if (course.inCart == false) {
+          course.inCart = true;
+          SetAction("Remove from");
+        } else if (course.inCart == true) {
+          course.inCart = false;
+          SetAction("Add to");
+        }
+        localStorage.setItem("Courses", JSON.stringify(courses));
+      }
+    });
   }
+  useEffect(() => {
+    let word = "";
+    const courses = JSON.parse(localStorage.getItem("Courses"));
+    courses.forEach((course) => {
+      if (course.name == name) {
+        if (course.inCart == false) {
+          word = "Add to";
+        } else if (course.inCart == true) {
+          word = "Remove from";
+        }
+        SetAction(word);
+      }
+    });
+  }, []);
   return (
     <div className="product">
       <div className="course">
@@ -25,7 +47,7 @@ const Product = ({ name, title, logo, price = 49.99 }) => {
       </p>
       <div className="buy">
         <p className="price">${price}</p>
-        <button onClick={Cart}>Add to Cart</button>
+        <button onClick={Cart}>{action} Cart</button>
       </div>
     </div>
   );
