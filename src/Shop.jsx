@@ -1,10 +1,26 @@
-import { Link } from "react-router-dom";
 import "./App.scss";
+import Product from "./components/Product";
+import logo from "./assets/javascript-logo.png";
 
 const Shop = () => {
   return (
-    <div className="homePage">
-      <p>WOW</p>
+    <div className="shop">
+      <Product
+        logo={logo}
+        title={"Javascript Course for Beginners - Become a Front End Master"}
+      />
+      <Product
+        logo={logo}
+        title={"Javascript Course for Beginners - Become a Front End Master"}
+      />
+      <Product
+        logo={logo}
+        title={"Javascript Course for Beginners - Become a Front End Master"}
+      />
+      <Product
+        logo={logo}
+        title={"Javascript Course for Beginners - Become a Front End Master"}
+      />
     </div>
   );
 };
